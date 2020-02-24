@@ -48,19 +48,25 @@
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
-					<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-						<ul class="navbar-nav">
+					<div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
+						<ul class="navbar-nav align-items-center">
 							<li class="nav-item active">
-								<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="#">SOMOS</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Features</a>
+								<a class="nav-link" href="#">PROPIEDADES</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Pricing</a>
+								<a class="nav-link" href="#">BLOG</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link disabled" href="#">Disabled</a>
+								<a class="nav-link" href="#"><div class="rrss-menu"><i class="fab fa-facebook-f"></i></div></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#"><div class="rrss-menu"><i class="fab fa-twitter"></i></div></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#"><div class="rrss-menu"><i class="fab fa-instagram"></i></div></a>
 							</li>
 						</ul>
 					</div>
@@ -123,8 +129,123 @@
 			</div>
 		</section>
 
-		<section id="destacados">
-			
+		<section id="bajada_texto">
+			<h2 class="acentuado">MAGNUS HOME</h2>
+			<p>Con nuestra pericia en la venta y arriendo de propiedades, gestionaremos en tiempo y forma la transacción inmobiliaria de manera exitosa y rentable, beneficiando a ambas partes.</p>
+			<p>Para nosotros es vital ser su aliado en todo el proceso, representándolo y asesorándolo para desarrollar un buen negocio inmobiliario con las condiciones pactadas.</p>
 		</section>
+
+		<section id="destacados">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="card">
+							<img src="propiedades/casa_01/casa_interior09.jpg" class="card-img-top" alt="">
+							<div class="card-body">
+								<h5 class="card-title m-0">CASA EN MAIPÚ<br><span class="acentuado">UF 4.263</span></h5>
+							</div>
+							<ul class="list-group list-group-flush bgAcentuado">
+								<li class="list-group-item bgAcentuado"><i class="fas fa-bed"></i>&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bath"></i>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;MAIPÚ</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card">
+							<img src="propiedades/depto_01/DSC_0081.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title m-0">DEPTO EN SANTIAGO CENTRO<br><span class="acentuado">UF 2.638</span></h5>
+							</div>
+							<ul class="list-group list-group-flush bgAcentuado">
+								<li class="list-group-item bgAcentuado"><i class="fas fa-bed"></i>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bath"></i>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;STGO CENTRO</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card">
+							<img src="propiedades/depto_02/DSC_0006-2.jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title m-0">DEPTO EN SANTIAGO CENTRO<br><span class="acentuado">UF 2.638</span></h5>
+							</div>
+							<ul class="list-group list-group-flush bgAcentuado">
+								<li class="list-group-item bgAcentuado"><i class="fas fa-bed"></i>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bath"></i>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;MAIPÚ</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card">
+							<img src="propiedades/parcela_01/3.jpeg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title m-0">PARCELA EN SANTA CRUZ<br><span class="acentuado">UF 1.055</span></h5>
+							</div>
+							<ul class="list-group list-group-flush bgAcentuado">
+								<li class="list-group-item bgAcentuado"><i class="fas fa-expand"></i>&nbsp;&nbsp;1.500 m2&nbsp;&nbsp;&nbsp;&nbsp;SANTA CRUZ</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="categoria">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="grid">
+							<figure class="effect-layla">
+								<img src="images/comercialBG.jpg" alt="img06"/>
+								<figcaption>
+									<h2>COMERCIAL</span></h2>
+								</figcaption>			
+							</figure>
+						</div>
+					</div>
+					<div class="col">
+						<div class="grid">
+							<figure class="effect-layla">
+								<img src="images/residencialBG.jpg" alt="img06"/>
+								<figcaption>
+									<h2>RESIDENCIAL</span></h2>
+								</figcaption>			
+							</figure>
+						</div>
+					</div>
+					<div class="col">
+						<div class="grid">
+							<figure class="effect-layla">
+								<img src="images/gestionInmobiliariaBG.jpg" alt="img06"/>
+								<figcaption>
+									<h2>GESTIÓN INMOBILIARIA</span></h2>
+								</figcaption>			
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<img src="images/logo_magnus_min.png" class="img-fluid">
+					</div>
+					<div class="col-sm-4">
+						<p>Somos una empresa familiar, con experiencia tanto en el rubro inmobiliario como en el sector financiero y ofrecemos a nuestros clientes una asesoría y atención personalizada abarcando diversos aspectos, legal y comercial, para la venta y arriendo de propiedades. </p>
+					</div>
+					<div class="col">
+						<h4>MENÚ</h4>
+						<p>SOMOS</p>
+						<p>SERVICIOS</p>
+						<p>PROPIEDADES</p>
+						<p>CONTACTO</p>
+					</div>
+					<div class="col">
+						<h4>CONTACTO</h4>
+						<p>+569 0000 0000</p>
+						<p>contacto@magnushome.cl</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
