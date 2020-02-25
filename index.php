@@ -38,11 +38,14 @@
 				<img src="images/logo_magnus_min.png" class="img-fluid">
 			</div>
 		</div> -->
+
+		<?php include "badgeFormPropiedad.php"; ?>
+
 		<header>
 			<!-- Just an image -->
 			<div class="container">
 				<nav class="navbar navbar-expand-lg navbar-light">
-					<a class="navbar-brand" href="#"><img src="images/logo_magnus_min.png" class="imgLogo"></a>
+					<a class="navbar-brand" href="index.php"><img src="images/logo_magnus_min.png" class="imgLogo"></a>
 
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
@@ -50,15 +53,15 @@
 
 					<div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
 						<ul class="navbar-nav align-items-center">
-							<li class="nav-item active">
-								<a class="nav-link" href="#">SOMOS</a>
+							<li class="nav-item">
+								<a class="nav-link" href="quienes-somos.php">SOMOS</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">PROPIEDADES</a>
+								<a class="nav-link" href="propiedades.php">PROPIEDADES</a>
 							</li>
-							<li class="nav-item">
+							<!-- <li class="nav-item">
 								<a class="nav-link" href="#">BLOG</a>
-							</li>
+							</li> -->
 							<li class="nav-item">
 								<a class="nav-link" href="#"><div class="rrss-menu"><i class="fab fa-facebook-f"></i></div></a>
 							</li>
@@ -75,7 +78,7 @@
 		</header>
 
 		<section id="cabecera">
-			<div class="contieneBG">
+			<div id="home" class="contieneBG">
 				<div class="container">
 					<div class="row no-gutters align-items-center ">
 						<div class="col">
@@ -89,7 +92,7 @@
 		<section id="buscador">
 			<div class="box-search">
 				<form class="form" id="formSearch">
-					<div class="row no-gutters">
+					<div class="row justify-content-center no-gutters row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-1">
 						<div class="col">
 							<select class="form-control">
 								<option>Propiedad...</option>
@@ -97,31 +100,31 @@
 								<option>Departamentos</option>
 								<option>Terrenos</option>
 								<option>Oficinas</option>
-
 							</select>
 						</div>
-						<div class="col">
+						<div class="col mt-sm-0 mt-2">
 							<select class="form-control">
 								<option>Estado...</option>
 								<option>Usadas</option>
 								<option>Nuevas</option>
 							</select>
 						</div>
-						<div class="col">
+						<div class="col mt-md-0 mt-2">
 							<select class="form-control">
 								<option>Tipo...</option>
 								<option>Arriendo</option>
 								<option>Compra</option>
 							</select>
 						</div>
-						<div class="col">
+						<div class="col mt-md-0 mt-2">
 							<select class="form-control">
 								<option>Comuna...</option>
-								<option>Las Condes</option>
 								<option>Maipú</option>
+								<option>Santa Cruz</option>
+								<option>Santiago Centro</option>
 							</select>
 						</div>
-						<div class="col">
+						<div class="col mt-lg-0 mt-2">
 							<a href="#" role="button" class="btn btn-buscar">BUSCAR <i class="fas fa-search"></i></a>
 						</div>
 					</div>
@@ -137,8 +140,8 @@
 
 		<section id="destacados">
 			<div class="container">
-				<div class="row">
-					<div class="col">
+				<div class="row justify-content-center">
+					<div class="col-lg-3 col-md-6 col-sm-9 col-10 pb-lg-0 pb-3">
 						<div class="card">
 							<img src="propiedades/casa_01/casa_interior09.jpg" class="card-img-top" alt="">
 							<div class="card-body">
@@ -149,7 +152,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col">
+					<div class="col-lg-3 col-md-6 col-sm-9 col-10 pb-lg-0 pb-3">
 						<div class="card">
 							<img src="propiedades/depto_01/DSC_0081.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
@@ -160,18 +163,18 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col">
+					<div class="col-lg-3 col-md-6 col-sm-9 col-10 pb-md-0 pb-3">
 						<div class="card">
 							<img src="propiedades/depto_02/DSC_0006-2.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
 								<h5 class="card-title m-0">DEPTO EN SANTIAGO CENTRO<br><span class="acentuado">UF 2.638</span></h5>
 							</div>
 							<ul class="list-group list-group-flush bgAcentuado">
-								<li class="list-group-item bgAcentuado"><i class="fas fa-bed"></i>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bath"></i>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;MAIPÚ</li>
+								<li class="list-group-item bgAcentuado"><i class="fas fa-bed"></i>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bath"></i>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;STGO CENTRO</li>
 							</ul>
 						</div>
 					</div>
-					<div class="col">
+					<div class="col-lg-3 col-md-6 col-sm-9 col-10 pb-md-0 pb-3">
 						<div class="card">
 							<img src="propiedades/parcela_01/3.jpeg" class="card-img-top" alt="...">
 							<div class="card-body">
@@ -188,33 +191,33 @@
 
 		<section id="categoria">
 			<div class="container">
-				<div class="row">
-					<div class="col">
+				<div class="row justify-content-center">
+					<div class="col-lg-4 col-md-6 col-9">
 						<div class="grid">
 							<figure class="effect-layla">
 								<img src="images/comercialBG.jpg" alt="img06"/>
 								<figcaption>
-									<h2>COMERCIAL</span></h2>
+									<h2>COMERCIAL</h2>
 								</figcaption>			
 							</figure>
 						</div>
 					</div>
-					<div class="col">
+					<div class="col-lg-4 col-md-6 col-9">
 						<div class="grid">
 							<figure class="effect-layla">
 								<img src="images/residencialBG.jpg" alt="img06"/>
 								<figcaption>
-									<h2>RESIDENCIAL</span></h2>
+									<h2>RESIDENCIAL</h2>
 								</figcaption>			
 							</figure>
 						</div>
 					</div>
-					<div class="col">
+					<div class="col-lg-4 col-md-6 col-9">
 						<div class="grid">
 							<figure class="effect-layla">
 								<img src="images/gestionInmobiliariaBG.jpg" alt="img06"/>
 								<figcaption>
-									<h2>GESTIÓN INMOBILIARIA</span></h2>
+									<h2>GESTIÓN INMOBILIARIA</h2>
 								</figcaption>			
 							</figure>
 						</div>
@@ -223,29 +226,6 @@
 			</div>
 		</section>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col text-center">
-						<img src="images/logo_magnus_min.png" class="img-fluid">
-					</div>
-					<div class="col-sm-4">
-						<p>Somos una empresa familiar, con experiencia tanto en el rubro inmobiliario como en el sector financiero y ofrecemos a nuestros clientes una asesoría y atención personalizada abarcando diversos aspectos, legal y comercial, para la venta y arriendo de propiedades. </p>
-					</div>
-					<div class="col">
-						<h4>MENÚ</h4>
-						<p>SOMOS</p>
-						<p>SERVICIOS</p>
-						<p>PROPIEDADES</p>
-						<p>CONTACTO</p>
-					</div>
-					<div class="col">
-						<h4>CONTACTO</h4>
-						<p>+569 0000 0000</p>
-						<p>contacto@magnushome.cl</p>
-					</div>
-				</div>
-			</div>
-		</footer>
+		<?php include 'footer.php'; ?>
 	</body>
 </html>
