@@ -100,6 +100,7 @@
 								<option>Departamentos</option>
 								<option>Terrenos</option>
 								<option>Oficinas</option>
+								<option>Inmobiliario</option>
 							</select>
 						</div>
 						<div class="col mt-sm-0 mt-2">
@@ -145,7 +146,7 @@
 						<div class="card">
 							<img src="propiedades/casa_01/casa_interior09.jpg" class="card-img-top" alt="">
 							<div class="card-body">
-								<h5 class="card-title m-0">CASA EN MAIPÚ<br><span class="acentuado">UF 4.263</span></h5>
+								<h5 class="card-title m-0">CASA EN MAIPÚ<br><span class="acentuado">$ 12.000.000</span></h5>
 							</div>
 							<ul class="list-group list-group-flush bgAcentuado">
 								<li class="list-group-item bgAcentuado"><i class="fas fa-bed"></i>&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bath"></i>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;MAIPÚ</li>
@@ -154,12 +155,12 @@
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-9 col-10 pb-lg-0 pb-3">
 						<div class="card">
-							<img src="propiedades/depto_01/DSC_0081.jpg" class="card-img-top" alt="...">
+							<img src="propiedades/parcela_02/DJI_0528.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
-								<h5 class="card-title m-0">DEPTO EN SANTIAGO CENTRO<br><span class="acentuado">UF 2.638</span></h5>
+								<h5 class="card-title m-0">PARCELA EN ALGARROBO<br><span class="acentuado">$ 69.000.000</span></h5>
 							</div>
 							<ul class="list-group list-group-flush bgAcentuado">
-								<li class="list-group-item bgAcentuado"><i class="fas fa-bed"></i>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bath"></i>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;STGO CENTRO</li>
+								<li class="list-group-item bgAcentuado"><i class="fas fa-expand"></i>&nbsp;&nbsp;376 m2&nbsp;&nbsp;&nbsp;&nbsp;ALGARROBO</li>
 							</ul>
 						</div>
 					</div>
@@ -167,7 +168,7 @@
 						<div class="card">
 							<img src="propiedades/depto_02/DSC_0006-2.jpg" class="card-img-top" alt="...">
 							<div class="card-body">
-								<h5 class="card-title m-0">DEPTO EN SANTIAGO CENTRO<br><span class="acentuado">UF 2.638</span></h5>
+								<h5 class="card-title m-0">DEPTO EN SANTIAGO CENTRO<br><span class="acentuado">$ 75.000.000</span></h5>
 							</div>
 							<ul class="list-group list-group-flush bgAcentuado">
 								<li class="list-group-item bgAcentuado"><i class="fas fa-bed"></i>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-bath"></i>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;STGO CENTRO</li>
@@ -178,7 +179,7 @@
 						<div class="card">
 							<img src="propiedades/parcela_01/3.jpeg" class="card-img-top" alt="...">
 							<div class="card-body">
-								<h5 class="card-title m-0">PARCELA EN SANTA CRUZ<br><span class="acentuado">UF 1.055</span></h5>
+								<h5 class="card-title m-0">PARCELA EN SANTA CRUZ<br><span class="acentuado">$ 30.000.000</span></h5>
 							</div>
 							<ul class="list-group list-group-flush bgAcentuado">
 								<li class="list-group-item bgAcentuado"><i class="fas fa-expand"></i>&nbsp;&nbsp;1.500 m2&nbsp;&nbsp;&nbsp;&nbsp;SANTA CRUZ</li>

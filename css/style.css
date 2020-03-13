@@ -11,11 +11,15 @@ html,body{font-family: 'Roboto', sans-serif;font-size: 17px;overflow-x: hidden;}
 .rrss-menu{background-color:#494e57;width: 35px;height: 35px;color: #fff;text-align: center;border-radius: 20px;padding: 1px;font-size: 21px;}
 .acentuado{color:#e54b4b;}
 .bgAcentuado{background-color: #e54b4b;color:#fff;}
+.bgGray{background-color: #ededed;}
 footer{background-color: #808081;color:#fff;padding: 3% 0;}
 footer .row div p:last-child{margin: 0;}
-#badgePropiedad{position: fixed;left: 0;top:20%;background-color:#e54b4b;border-radius: 0 10px 10px 0;padding: 1.2rem 1rem;}
+#badgePropiedad{position: fixed;left: 0;top:20%;background-color:#e54b4b;border-radius: 0 10px 10px 0;padding: 1.2rem 1rem;z-index: 200;}
 #badgePropiedad p{color: #fff;text-align: right;margin: 0;}
 .btn-enviar{background-color:#e54b4b;color: #fff;font-weight: 800;width: 100%;}
+*::-moz-selection{background: #e54b4b;color: #FFF;}
+*::selection {background: #e54b4b;color: #FFF;}
+#sectionated{padding:3% 0;}
 
 @media (min-width:992px) and (max-width:1200px){
 	.container{max-width: 990px;}
@@ -58,7 +62,7 @@ footer .row div p:last-child{margin: 0;}
 	#home.contieneBG{background-image: url(../images/sliderHome.jpg);background-position: center;background-size: cover;}
 	#somos.contieneBG{background-image: url(../images/sliderSomos.jpg);background-position: center;background-size: cover;}
 	#propiedades.contieneBG{background-image: url(../images/sliderPropiedades.jpg);background-position: center;background-size: cover;}
-	.titPage{text-align: center;}
+	.titPage{text-align: center;text-shadow: 2px 2px 4px #000;}
 	#cabecera .contieneBG .row{min-height: 500px;}
 	#cabecera{display: block;width: 100%;z-index: 4;}
 
@@ -96,6 +100,12 @@ footer .row div p:last-child{margin: 0;}
 #default{padding: 6% 0 5%;}
 #formPropiedad{width:700px;margin: 0 auto;}
 #formPropiedad textarea{resize: none;}
+
+#filtrado .nav-item .nav-link.active{background: #e54b4b;color:#fff;}
+#filtrado .nav-item .nav-link{color:#494e57;}
+
+#pills-tabContent .card{border:none;}
+#pills-tabContent .card-body{padding: 0;}
 
 
 @media (min-width:576px) and (max-width:767px){
