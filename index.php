@@ -96,33 +96,39 @@
 						<div class="col">
 							<select class="form-control">
 								<option>Propiedad...</option>
-								<option>Casas</option>
-								<option>Departamentos</option>
-								<option>Terrenos</option>
-								<option>Oficinas</option>
-								<option>Inmobiliario</option>
+								<option value="">Casas</option>
+								<option value="">Departamentos</option>
+								<option value="">Terrenos</option>
+								<option value="">Oficinas</option>
+								<option value="">Inmobiliario</option>
 							</select>
 						</div>
 						<div class="col mt-sm-0 mt-2">
 							<select class="form-control">
-								<option>Estado...</option>
-								<option>Usadas</option>
-								<option>Nuevas</option>
+								<option value="">Estado...</option>
+								<option value="">Usadas</option>
+								<option value="">Nuevas</option>
 							</select>
 						</div>
 						<div class="col mt-md-0 mt-2">
 							<select class="form-control">
-								<option>Tipo...</option>
-								<option>Arriendo</option>
-								<option>Compra</option>
+								<option value="">Tipo...</option>
+								<option value="">Arriendo</option>
+								<option value="">Compra</option>
 							</select>
 						</div>
 						<div class="col mt-md-0 mt-2">
 							<select class="form-control">
-								<option>Comuna...</option>
-								<option>Maipú</option>
-								<option>Santa Cruz</option>
-								<option>Santiago Centro</option>
+								<option value="">Comuna...</option>
+								<option value="">Algarrobo</option>
+								<option value="">Curacaví</option>
+								<option value="">La Ligua</option>
+								<option value="">Lo Barnechea</option>
+								<option value="">Maipú</option>
+								<option value="">Quinta Normal</option>
+								<option value="">Santa Cruz</option>
+								<option value="">Santiago Centro</option>
+								<option value="">Viña del Mar</option>
 							</select>
 						</div>
 						<div class="col mt-lg-0 mt-2">

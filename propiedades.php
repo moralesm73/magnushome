@@ -131,7 +131,7 @@
 								<div class="card mb-3">
 									<div class="row no-gutters align-items-center">
 										<div class="col-md-5">
-											<img src="propiedades/<?php echo utf8_encode($infoViviendas1['imagen']);?>" class="card-img">
+											<a href="ficha-vivienda.php?id=<?php echo $infoViviendas1['id'] ?>"><img src="propiedades/<?php echo utf8_encode($infoViviendas1['imagen']);?>" class="card-img"></a>
 										</div>
 										<div class="col-md-7 px-3">
 											<div class="card-body">
@@ -179,7 +179,7 @@
 								<div class="card mb-3">
 									<div class="row no-gutters align-items-center">
 										<div class="col-md-5">
-											<img src="propiedades/<?php echo utf8_encode($infoViviendas2['imagen']);?>" class="card-img">
+											<a href="ficha-vivienda.php?id=<?php echo $infoViviendas2['id'] ?>"><img src="propiedades/<?php echo utf8_encode($infoViviendas2['imagen']);?>" class="card-img"></a>
 										</div>
 										<div class="col-md-7 px-3">
 											<div class="card-body">
@@ -227,7 +227,7 @@
 								<div class="card mb-3">
 									<div class="row no-gutters align-items-center">
 										<div class="col-md-5">
-											<img src="propiedades/<?php echo utf8_encode($infoViviendas3['imagen']);?>" class="card-img">
+											<a href="ficha-vivienda.php?id=<?php echo $infoViviendas3['id'] ?>"><img src="propiedades/<?php echo utf8_encode($infoViviendas3['imagen']);?>" class="card-img"></a>
 										</div>
 										<div class="col-md-7 px-3">
 											<div class="card-body">
@@ -271,11 +271,11 @@
 							<div class="tab-pane fade" id="listPrecioB" role="tabpanel" aria-labelledby="filPrecioB">
 								<?php
 								 	while($infoViviendas4 = mysqli_fetch_array($consulta4)){
-								 ?>
+								?>
 								<div class="card mb-3">
 									<div class="row no-gutters align-items-center">
 										<div class="col-md-5">
-											<img src="propiedades/<?php echo utf8_encode($infoViviendas4['imagen']);?>" class="card-img">
+											<a href="ficha-vivienda.php?id=<?php echo $infoViviendas4['id'] ?>"><img src="propiedades/<?php echo utf8_encode($infoViviendas4['imagen']);?>" class="card-img"></a>
 										</div>
 										<div class="col-md-7 px-3">
 											<div class="card-body">
@@ -325,11 +325,11 @@
 							<form id="formContacto">
 								<div class="form-group">
 									<label for="nombre" class="col-form-label">Nombre</label>
-									<input type="text" class="form-control" id="nombre">
+									<input type="text" class="form-control" id="nombre" name="nombre">
 								</div>
 								<div class="form-group">
 									<label for="email" class="col-form-label">Email</label>
-									<input type="email" class="form-control" id="email">
+									<input type="email" class="form-control" id="email" name="email">
 								</div>
 								<div class="form-group">
 									<label for="fono" class="col-form-label">Fono</label>
@@ -337,12 +337,12 @@
 										<div class="input-group-prepend">
 											<div class="input-group-text">+56 9</div>
 										</div>
-										<input type="text" class="form-control" id="fono">
+										<input type="text" class="form-control" id="fono" name="fono">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="mensaje" class="col-form-label">Mensaje</label>
-									<textarea class="form-control" id="mensaje" rows="3"></textarea>
+									<textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
 								</div>
 								<div class="form-group">
 									<div class="col text-center">
@@ -356,5 +356,6 @@
 			</div>
 		</section>
 
+		<?php include 'footer.php'; ?>
 	</body>
 </html>

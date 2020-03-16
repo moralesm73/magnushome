@@ -62,6 +62,7 @@ footer .row div p:last-child{margin: 0;}
 	#home.contieneBG{background-image: url(../images/sliderHome.jpg);background-position: center;background-size: cover;}
 	#somos.contieneBG{background-image: url(../images/sliderSomos.jpg);background-position: center;background-size: cover;}
 	#propiedades.contieneBG{background-image: url(../images/sliderPropiedades.jpg);background-position: center;background-size: cover;}
+	#fichas.contieneBG{background-position: center;background-size: cover;}
 	.titPage{text-align: center;text-shadow: 2px 2px 4px #000;}
 	#cabecera .contieneBG .row{min-height: 500px;}
 	#cabecera{display: block;width: 100%;z-index: 4;}
