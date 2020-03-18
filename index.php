@@ -91,48 +91,48 @@
 
 		<section id="buscador">
 			<div class="box-search">
-				<form class="form" id="formSearch">
+				<form class="form" id="formSearch" action="busqueda.php">
 					<div class="row justify-content-center no-gutters row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-1">
 						<div class="col">
-							<select class="form-control">
-								<option>Propiedad...</option>
-								<option value="">Casas</option>
-								<option value="">Departamentos</option>
-								<option value="">Terrenos</option>
-								<option value="">Oficinas</option>
-								<option value="">Inmobiliario</option>
+							<select class="form-control" name="p" required>
+								<option value="">Propiedad...</option>
+								<option value="Casa">Casas</option>
+								<option value="Departamento">Departamentos</option>
+								<option value="Terreno">Terrenos</option>
+								<option value="Oficina">Oficinas</option>
+								<option value="Inmobiliario">Inmobiliario</option>
 							</select>
 						</div>
 						<div class="col mt-sm-0 mt-2">
-							<select class="form-control">
+							<select class="form-control" name="e" required>
 								<option value="">Estado...</option>
-								<option value="">Usadas</option>
-								<option value="">Nuevas</option>
+								<option value="Usadas">Usadas</option>
+								<option value="Nuevas">Nuevas</option>
 							</select>
 						</div>
 						<div class="col mt-md-0 mt-2">
-							<select class="form-control">
+							<select class="form-control" name="t" required>
 								<option value="">Tipo...</option>
-								<option value="">Arriendo</option>
-								<option value="">Compra</option>
+								<option value="Arriendo">Arriendo</option>
+								<option value="Venta">Compra</option>
 							</select>
 						</div>
 						<div class="col mt-md-0 mt-2">
-							<select class="form-control">
+							<select class="form-control" name="c" required>
 								<option value="">Comuna...</option>
-								<option value="">Algarrobo</option>
-								<option value="">Curacaví</option>
-								<option value="">La Ligua</option>
-								<option value="">Lo Barnechea</option>
-								<option value="">Maipú</option>
-								<option value="">Quinta Normal</option>
-								<option value="">Santa Cruz</option>
-								<option value="">Santiago Centro</option>
-								<option value="">Viña del Mar</option>
+								<option value="1">Algarrobo</option>
+								<option value="2">Curacaví</option>
+								<option value="3">La Ligua</option>
+								<option value="4">Lo Barnechea</option>
+								<option value="5">Maipú</option>
+								<option value="6">Quinta Normal</option>
+								<option value="7">Santa Cruz</option>
+								<option value="8">Santiago Centro</option>
+								<option value="9">Viña del Mar</option>
 							</select>
 						</div>
 						<div class="col mt-lg-0 mt-2">
-							<a href="#" role="button" class="btn btn-buscar">BUSCAR <i class="fas fa-search"></i></a>
+							<button class="btn btn-buscar" type="submit">BUSCAR <i class="fas fa-search"></i></button>
 						</div>
 					</div>
 				</form>

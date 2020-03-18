@@ -116,7 +116,7 @@
 		<section id="sectionated">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-8">
+					<div class="col-lg-8 mb-4 mb-md-0">
 						<ul class="nav nav-pills nav-fill mb-3" id="filtrado" role="tablist">
 							<li class="nav-item">
 								<a class="nav-link active" id="tabInfo" data-toggle="pill" href="#contInfo" role="tab" aria-controls="contInfo" aria-selected="true"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;&nbsp;Información</a>
@@ -138,7 +138,9 @@
 
 								<?php echo utf8_encode($consulta1['descripcion']); ?>
 
-								<ul class="list-group list-group-horizontal">
+								<h4 class="mt-4">Características</h4>
+
+								<ul class="list-group list-group-horizontal-sm">
 									<li class="list-group-item"><?php echo utf8_encode($consulta1['tipo_propiedad']); ?></li>
 									<li class="list-group-item"><?php echo utf8_encode($consulta1['tipo_publicacion']); ?></li>
 									<?php if ($consulta1['dormitorio'] != NULL) {?><li class="list-group-item"><?php echo $consulta1['dormitorio']?> dormitorios</li><?php }?>

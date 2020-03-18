@@ -8,11 +8,16 @@
 	    die("Connection failed: " . mysqli_connect_error());
 	};
 
+	if ($_GET['p']) {$propiedad = $_GET['p'];}
+	if ($_GET['e']) {$estado = $_GET['e'];}
+	if ($_GET['t']) {$tipo = $_GET['t'];}
+	if ($_GET['c']) {$comuna = $_GET['c'];}
+
 	//cargar informacion de departamentos
-	$consulta1 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 ORDER BY id DESC");
-	$consulta2 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 ORDER BY nombre ASC");
-	$consulta3 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 ORDER BY precio DESC");
-	$consulta4 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 ORDER BY precio ASC");
+	$consulta1 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 AND tipo_propiedad = '$propiedad' AND estado = '$estado' AND tipo_publicacion = '$tipo' AND comuna = $comuna ORDER BY id DESC");
+	$consulta2 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 AND tipo_propiedad = '$propiedad' AND estado = '$estado' AND tipo_publicacion = '$tipo' AND comuna = $comuna ORDER BY nombre ASC");
+	$consulta3 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 AND tipo_propiedad = '$propiedad' AND estado = '$estado' AND tipo_publicacion = '$tipo' AND comuna = $comuna ORDER BY precio DESC");
+	$consulta4 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 AND tipo_propiedad = '$propiedad' AND estado = '$estado' AND tipo_publicacion = '$tipo' AND comuna = $comuna ORDER BY precio ASC");
 	mysqli_close($conn);
 	//$infoDeptos = mysqli_fetch_assoc($consulta);
 ?>
@@ -126,7 +131,10 @@
 						<div class="tab-content" id="pills-tabContent">
 							<div class="tab-pane fade show active" id="listFecha" role="tabpanel" aria-labelledby="filFecha">
 								 <?php
-								 	while($infoViviendas1 = mysqli_fetch_array($consulta1)){
+								 	if (mysqli_fetch_row($consulta1) == 0) {
+								 		echo "<p>No se encontraron resultados para esta búsqueda</p>";
+								 	}else{
+								 		while($infoViviendas1 = mysqli_fetch_array($consulta1)){
 								 ?>
 								<div class="card mb-3">
 									<div class="row no-gutters align-items-center">
@@ -169,12 +177,16 @@
 									</div>
 								</div>
 								<?php
+										};
 									};
 								?>
 							</div>
 							<div class="tab-pane fade" id="listOrden" role="tabpanel" aria-labelledby="filOrden">
 								<?php
-								 	while($infoViviendas2 = mysqli_fetch_array($consulta2)){
+									if (mysqli_fetch_row($consulta2) == 0) {
+								 		echo "<p>No se encontraron resultados para esta búsqueda</p>";
+								 	}else{
+								 		while($infoViviendas2 = mysqli_fetch_array($consulta2)){
 								 ?>
 								<div class="card mb-3">
 									<div class="row no-gutters align-items-center">
@@ -217,12 +229,16 @@
 									</div>
 								</div>
 								<?php
+										};
 									};
 								?>
 							</div>
 							<div class="tab-pane fade" id="listPrecioA" role="tabpanel" aria-labelledby="filPrecioA">
 								<?php
-								 	while($infoViviendas3 = mysqli_fetch_array($consulta3)){
+									if (mysqli_fetch_row($consulta3) == 0) {
+								 		echo "<p>No se encontraron resultados para esta búsqueda</p>";
+								 	}else{
+								 		while($infoViviendas3 = mysqli_fetch_array($consulta3)){
 								?>
 								<div class="card mb-3">
 									<div class="row no-gutters align-items-center">
@@ -265,12 +281,16 @@
 									</div>
 								</div>
 								<?php
+										};
 									};
 								?>
 							</div>
 							<div class="tab-pane fade" id="listPrecioB" role="tabpanel" aria-labelledby="filPrecioB">
 								<?php
-								 	while($infoViviendas4 = mysqli_fetch_array($consulta4)){
+									if (mysqli_fetch_row($consulta4) == 0) {
+								 		echo "<p>No se encontraron resultados para esta búsqueda</p>";
+								 	}else{
+								 		while($infoViviendas4 = mysqli_fetch_array($consulta4)){
 								?>
 								<div class="card mb-3">
 									<div class="row no-gutters align-items-center">
@@ -313,6 +333,7 @@
 									</div>
 								</div>
 								<?php
+										};
 									};
 								?>
 							</div>
