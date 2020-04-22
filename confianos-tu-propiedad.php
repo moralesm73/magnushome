@@ -29,6 +29,8 @@
 			});
 		</script> -->
 
+		<script src="https://www.google.com/recaptcha/api.js?render=6LeW4eIUAAAAAP5oWqgMWsF54QGYYjldCQ0BefW1"></script>
+
 	</head>
 	<body>
 
@@ -38,6 +40,33 @@
 				<img src="images/logo_magnus_min.png" class="img-fluid">
 			</div>
 		</div> -->
+
+		<?php 
+			if( !empty($_GET['e']) ){
+		?>
+			<script type="text/javascript">
+				$(document).ready( function() {
+					$('#modalError').modal('show');
+				});
+			</script>
+			<div id="modalError" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-warning bg-warning">
+						<div class="modal-header">
+							<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body text-white">
+							Hubo un error en el envío del formulario. Inténtalo nuevamente.
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php
+			};
+		?>
+
 		<header>
 			<!-- Just an image -->
 			<div class="container">
@@ -89,64 +118,64 @@
 		<section id="default">
 			<div class="container">
 				<h1 class="acentuado text-center">CONFÍANOS TU PROPIEDAD</h1>
-				<form id="formPropiedad">
+				<form id="formPropiedad" action="assets/guardarPropiedad.php" method="POST">
 					<p>Ingresa tus datos y te contactaremos a la brevedad.</p>
 					<div class="form-group row">
 						<label for="tipo" class="col-sm-3 col-form-label">Quiero</label>
 						<div class="col-sm-9">
-							<select class="form-control" id="tipo">
+							<select class="form-control" id="tipo" name="tipo" required>
 								<option>Elige una opción...</option>
-								<option>Vender mi propiedad</option>
-								<option>Arrendar mi propiedad</option>
+								<option value="Venta">Vender mi propiedad</option>
+								<option value="Arriendo">Arrendar mi propiedad</option>
 							</select>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="propiedad" class="col-sm-3 col-form-label">Mi propiedad es</label>
 						<div class="col-sm-9">
-							<select class="form-control" id="propiedad">
+							<select class="form-control" id="propiedad" name="propiedad" required>
 								<option>Elige una opción...</option>
-								<option>Casa</option>
-								<option>Departamento</option>
-								<option>Terreno</option>
-								<option>Oficina</option>
+								<option value="Casa">Casa</option>
+								<option value="Depto">Departamento</option>
+								<option value="Terreno/Parcela">Terreno o Parcela</option>
+								<option value="Oficina">Oficina</option>
 							</select>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="propiedad" class="col-sm-3 col-form-label">Región</label>
 						<div class="col-sm-9">
-							<select class="form-control" id="propiedad">
+							<select class="form-control" id="region" name="region" required>
 								<option value="">Elige una opción...</option>
-								<option value="I Región de Tarapacá">I Región de Tarapacá</option>
-								<option value="II Región de Antofagasta">II Región de Antofagasta</option>
-								<option value="III Región de Atacama">III Región de Atacama</option>
-								<option value="IV Región de Coquimbo">IV Región de Coquimbo</option>
-								<option value="V Región de Valparaíso">V Región de Valparaíso</option>
-								<option value="VI Región del Libertador General Bernardo O'Higgins">VI Región del Libertador General Bernardo O'Higgins</option>
-								<option value="VII Región del Maule">VII Región del Maule</option>
-								<option value="VIII Región de Concepción">VIII Región de Concepción</option>
-								<option value="IX Región de la Araucanía">IX Región de la Araucanía</option>
-								<option value="X Región de Los Lagos">X Región de Los Lagos</option>
-								<option value="XI Región de Aysén del General Carlos Ibañez del Campo">XI Región de Aysén del General Carlos Ibañez del Campo</option>
-								<option value="XII Región de Magallanes y de la Antártica Chilena">XII Región de Magallanes y de la Antártica Chilena</option>
-								<option value="XIII Región Metropolitana de Santiago">XIII Región Metropolitana de Santiago</option>
-								<option value="XIV Región de Los Ríos">XIV Región de Los Ríos</option>
-								<option value="XV Región de Arica y Parinacota">XV Región de Arica y Parinacota</option>
-								<option value="XVI Región del Ñuble">XVI Región del Ñuble</option>
+								<option value="1">I Región de Tarapacá</option>
+								<option value="2">II Región de Antofagasta</option>
+								<option value="3">III Región de Atacama</option>
+								<option value="4">IV Región de Coquimbo</option>
+								<option value="5">V Región de Valparaíso</option>
+								<option value="6">VI Región del Libertador General Bernardo O'Higgins</option>
+								<option value="7">VII Región del Maule</option>
+								<option value="8">VIII Región del Biobío</option>
+								<option value="9">IX Región de la Araucanía</option>
+								<option value="10">X Región de Los Lagos</option>
+								<option value="11">XI Región de Aysén del General Carlos Ibañez del Campo</option>
+								<option value="12">XII Región de Magallanes y de la Antártica Chilena</option>
+								<option value="13">XIII Región Metropolitana de Santiago</option>
+								<option value="14">XIV Región de Los Ríos</option>
+								<option value="15">XV Región de Arica y Parinacota</option>
+								<option value="16">XVI Región del Ñuble</option>
 							</select>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="comuna" class="col-sm-3 col-form-label">Comuna</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="comuna">
+							<input type="text" class="form-control" id="comuna" name="comuna" maxlength="100" required>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="nombre" class="col-sm-3 col-form-label">Nombre</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" id="nombre">
+							<input type="text" class="form-control" id="nombre" name="nombre" maxlength="80" required>
 						</div>
 					</div>
 					<div class="form-group row">
@@ -156,22 +185,23 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text">+56 9</div>
 								</div>
-								<input type="text" class="form-control" id="fono">
+								<input type="text" class="form-control" id="fono" name="fono" maxlength="20" required>
 							</div>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="email" class="col-sm-3 col-form-label">Email</label>
 						<div class="col-sm-9">
-							<input type="email" class="form-control" id="email">
+							<input type="email" class="form-control" id="email" name="email" maxlength="80" required>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="mensaje" class="col-sm-3 col-form-label">Información adicional</label>
 						<div class="col-sm-9">
-							<textarea class="form-control" id="mensaje" rows="3"></textarea>
+							<textarea class="form-control" id="mensaje" maxlength="500" name="mensaje" rows="3"></textarea>
 						</div>
 					</div>
+					<input type="hidden" class="form-control g-recaptcha" name="g-recaptcha-response" id="g-recaptcha-response">
 					<div class="form-group row">
 						<div class="col text-center">
 							<button type="submit" class="btn btn-enviar">Quiero ser contactado</button>
@@ -182,5 +212,13 @@
 		</section>
 
 		<?php include 'footer.php'; ?>
+
+		<script>
+          grecaptcha.ready(function() {
+            grecaptcha.execute('6LeW4eIUAAAAAP5oWqgMWsF54QGYYjldCQ0BefW1', {action: 'confiaProp'}).then(function(token) {
+              document.getElementById('g-recaptcha-response').value=token;
+            });
+          });
+        </script>
 	</body>
 </html>

@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	include 'assets/conn.php';
 
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -52,6 +51,8 @@
 				$("#loader").fadeOut("slow");
 			});
 		</script> -->
+
+		<script src="https://www.google.com/recaptcha/api.js?render=6LeW4eIUAAAAAP5oWqgMWsF54QGYYjldCQ0BefW1"></script>
 
 	</head>
 	<body>
@@ -365,6 +366,7 @@
 									<label for="mensaje" class="col-form-label">Mensaje</label>
 									<textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
 								</div>
+								<input type="hidden" class="form-control g-recaptcha" name="g-recaptcha-response" id="g-recaptcha-response">
 								<div class="form-group">
 									<div class="col text-center">
 										<button type="submit" class="btn btn-enviar">Enviar</button>
@@ -378,5 +380,13 @@
 		</section>
 
 		<?php include 'footer.php'; ?>
+
+		<script>
+          grecaptcha.ready(function() {
+            grecaptcha.execute('6LeW4eIUAAAAAP5oWqgMWsF54QGYYjldCQ0BefW1', {action: 'busqueda'}).then(function(token) {
+              document.getElementById('g-recaptcha-response').value=token;
+            });
+          });
+        </script>
 	</body>
 </html>

@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	include 'assets/conn.php';
 
 	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -9,10 +8,10 @@
 	};
 
 	//cargar informacion de departamentos
-	$consulta1 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 ORDER BY id DESC");
-	$consulta2 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 ORDER BY nombre ASC");
-	$consulta3 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 ORDER BY precio DESC");
-	$consulta4 = mysqli_query($conn, "SELECT * FROM viviendas WHERE activo = 1 ORDER BY precio ASC");
+	$consulta1 = mysqli_query($conn, "SELECT a.id, a.nombre, a.tipo_propiedad, a.estado, a.tipo_publicacion, b.comuna, c.region, a.dormitorio, a.banho, a.precio, a.superficie, a.imagen, a.extracto, a.fecha FROM viviendas a, comunas b, regiones c WHERE a.activo = 1 AND a.comuna = b.id AND a.region = c.id ORDER BY a.id DESC");
+	$consulta2 = mysqli_query($conn, "SELECT a.id, a.nombre, a.tipo_propiedad, a.estado, a.tipo_publicacion, b.comuna, c.region, a.dormitorio, a.banho, a.precio, a.superficie, a.imagen, a.extracto, a.fecha FROM viviendas a, comunas b, regiones c WHERE a.activo = 1 AND a.comuna = b.id AND a.region = c.id ORDER BY a.nombre DESC");
+	$consulta3 = mysqli_query($conn, "SELECT a.id, a.nombre, a.tipo_propiedad, a.estado, a.tipo_publicacion, b.comuna, c.region, a.dormitorio, a.banho, a.precio, a.superficie, a.imagen, a.extracto, a.fecha FROM viviendas a, comunas b, regiones c WHERE a.activo = 1 AND a.comuna = b.id AND a.region = c.id ORDER BY a.precio DESC");
+	$consulta4 = mysqli_query($conn, "SELECT a.id, a.nombre, a.tipo_propiedad, a.estado, a.tipo_publicacion, b.comuna, c.region, a.dormitorio, a.banho, a.precio, a.superficie, a.imagen, a.extracto, a.fecha FROM viviendas a, comunas b, regiones c WHERE a.activo = 1 AND a.comuna = b.id AND a.region = c.id ORDER BY a.precio ASC");
 	mysqli_close($conn);
 	//$infoDeptos = mysqli_fetch_assoc($consulta);
 ?>
@@ -48,6 +47,8 @@
 			});
 		</script> -->
 
+		<script src="https://www.google.com/recaptcha/api.js?render=6LeW4eIUAAAAAP5oWqgMWsF54QGYYjldCQ0BefW1"></script>
+
 	</head>
 	<body>
 
@@ -58,7 +59,32 @@
 			</div>
 		</div> -->
 
-		<?php include "badgeFormPropiedad.php"; ?>
+		<?php 
+			include "badgeFormPropiedad.php";
+			if( !empty($_GET['e']) ){
+		?>
+			<script type="text/javascript">
+				$(document).ready( function() {
+					$('#modalError').modal('show');
+				});
+			</script>
+			<div id="modalError" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-warning bg-warning">
+						<div class="modal-header">
+							<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body text-white">
+							Hubo un error en el envío del formulario. Inténtalo nuevamente.
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php
+			};
+		?>
 
 		<header>
 			<!-- Just an image -->
@@ -344,6 +370,7 @@
 									<label for="mensaje" class="col-form-label">Mensaje</label>
 									<textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
 								</div>
+								<input type="hidden" class="form-control g-recaptcha" name="g-recaptcha-response" id="g-recaptcha-response">
 								<div class="form-group">
 									<div class="col text-center">
 										<button type="submit" class="btn btn-enviar">Enviar</button>
@@ -357,5 +384,13 @@
 		</section>
 
 		<?php include 'footer.php'; ?>
+
+		<script>
+          grecaptcha.ready(function() {
+            grecaptcha.execute('6LeW4eIUAAAAAP5oWqgMWsF54QGYYjldCQ0BefW1', {action: 'propiedades'}).then(function(token) {
+              document.getElementById('g-recaptcha-response').value=token;
+            });
+          });
+        </script>
 	</body>
 </html>

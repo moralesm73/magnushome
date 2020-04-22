@@ -10,16 +10,22 @@
 	
 	
 	// Datos del Formulario
+	$tipo 			= test_input($_POST['tipo']);
+	$propiedad 		= test_input($_POST['propiedad']);
+	$region 		= test_input($_POST['region']);
+	$comuna 		= test_input($_POST['comuna']);
 	$nombre 		= test_input($_POST['nombre']);
-	$email 			= test_input($_POST['email']);
 	$telefono 		= test_input($_POST['fono']);
-	$mensaje 		= test_input($_POST['mensaje']);
+	$email 			= test_input($_POST['email']);
+	$info_adicional	= test_input($_POST['mensaje']);
 	$time 			= date("Y-m-d", time());
+
+	$infoRegion = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM regiones WHERE id = $region"));
 
 	$verificador = getCaptcha($_POST['g-recaptcha-response']);
 
 	if ($verificador->success == true && $verificador->score >= 0.5) {
-		mysqli_query($conn, "INSERT INTO contactoweb (nombre, email, telefono, mensaje, fecha) VALUES ('$nombre', '$email', '$telefono', '$mensaje', '$time')");
+		mysqli_query($conn, "INSERT INTO confia_propiedad (tipo_publicacion, tipo_propiedad, region, comuna, nombre, telefono, email, info_adicional, fecha) VALUES ('$tipo', '$propiedad', '$region', '$comuna', '$nombre', '$telefono', '$email', '$info_adicional', '$time')");
 
 		require("PHPmailer/class.phpmailer.php");
 		require("PHPmailer/class.smtp.php");
@@ -30,15 +36,15 @@
 
 		$mailUsuario 	= new PHPMailer();
 		$mailUsuario->From = $correo1;
-		$mailUsuario->FromName = 'Contacto Magnus Home';
+		$mailUsuario->FromName = 'Propiedad Magnus Home';
 		$mailUsuario->AddAddress('cristofher.pereira@magnushome.cl');
 		//$mailUsuario->AddAddress('moralesmatias193@gmail.com');
 		$mailUsuario->IsHTML(true); 
-		$mailUsuario->Subject = "Nuevo Contacto Magnus Home";
+		$mailUsuario->Subject = "Nueva Propiedad Magnus Home";
 		$mailUsuario->Body = '
 					<html>
 						<head>
-							<title>Información Contacto Magnus Home</title>
+							<title>Información Propiedad Magnus Home</title>
 						</head>
 						<body style="color:#ffffff;">
 							<table style="background:#ffffff;color:#000000;" align="center">
@@ -61,6 +67,10 @@
 											<p style="margin:0 0 5px 10px;color:#000000;font-family:Arial;"><strong>Nombre:</u></strong> '. utf8_encode($nombre) .'</p>
 											<p style="margin:0 0 5px 10px;color:#000000;font-family:Arial;"><strong>Email:</strong> '. utf8_encode($email) .'</p>
 											<p style="margin:0 0 5px 10px;color:#000000;font-family:Arial;"><strong>Telefono:</strong> '. utf8_encode($telefono) .'</p>
+											<p style="margin:0 0 5px 10px;color:#000000;font-family:Arial;"><strong>Tipo de propiedad:</strong> '. utf8_encode($propiedad) .'</p>
+											<p style="margin:0 0 5px 10px;color:#000000;font-family:Arial;"><strong>Tipo de publicacion:</strong> '. utf8_encode($tipo) .'</p>
+											<p style="margin:0 0 5px 10px;color:#000000;font-family:Arial;"><strong>Region:</strong> '. utf8_encode($infoRegion["id_romano"]) .'</p>
+											<p style="margin:0 0 5px 10px;color:#000000;font-family:Arial;"><strong>Comuna:</strong> '. utf8_encode($comuna) .'</p>
 											<p style="margin:0 0 30px 10px;color:#000000;font-family:Arial;"><strong>Mensaje:</strong><br>'. utf8_encode($mensaje) .'</p>
 											<p style="margin:0 0 30px 10px;color:#000000;font-family:Arial;"><strong>Fecha:</strong> '. $time .'</p>
 										</div>
@@ -88,9 +98,9 @@
 
 		$mailUsuario->Send();
 			
-		echo '<script language="javascript">window.location="https://magnushome.cl/gracias.php"</script>';
+		echo '<script language="javascript">window.location="https://magnushome.cl/gracias-propiedad.php"</script>';
 	}else{
-		echo '<script language="javascript">window.location="https://magnushome.cl/propiedades.php?e=1"</script>';
+		echo '<script language="javascript">window.location="https://magnushome.cl/confianos-tu-propiedad.php?e=1"</script>';
 	};
 		
 	function test_input($data) {

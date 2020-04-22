@@ -8,7 +8,12 @@
 	    die("Connection failed: " . mysqli_connect_error());
 	};
 
-	$id = $_GET['id'];
+	if (isset($_GET['id'])) {
+		$id = $_GET['id'];
+		$_SESSION['loggedin'] = $id;
+	}else{
+		echo '<script language="javascript">window.location="https://magnushome.cl/propiedades.php"</script>';
+	};
 
 	//cargar informacion de departamentos
 	$consulta1 = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM viviendas WHERE id = $id"));
@@ -41,8 +46,19 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="js/bootstrap.min.js"></script>
 
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<?php 
+			if( !empty($_GET['e']) ){
+		?>
+			<script type="text/javascript">
+				$(document).ready( function() {
+					$('#modalError').modal('show');
+				});
+			</script>
+		<?php
+			};
+		?>
 
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="lightview-3.5.1/css/lightview/lightview.css"/>
 		
 		<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
@@ -58,6 +74,8 @@
 			});
 		</script> -->
 
+		<script src="https://www.google.com/recaptcha/api.js?render=6LeW4eIUAAAAAP5oWqgMWsF54QGYYjldCQ0BefW1"></script>
+
 	</head>
 	<body>
 
@@ -67,6 +85,27 @@
 				<img src="images/logo_magnus_min.png" class="img-fluid">
 			</div>
 		</div> -->
+
+		<?php 
+			if( !empty($_GET['e']) ){
+		?>
+			<div id="modalError" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-warning bg-warning">
+						<div class="modal-header">
+							<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body text-white">
+							Hubo un error en el envío del formulario. Inténtalo nuevamente.
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php
+			};
+		?>
 
 		<header>
 			<!-- Just an image -->
@@ -121,9 +160,11 @@
 							<li class="nav-item">
 								<a class="nav-link active" id="tabInfo" data-toggle="pill" href="#contInfo" role="tab" aria-controls="contInfo" aria-selected="true"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;&nbsp;Información</a>
 							</li>
+							<?php if($consulta1['ubicacion'] != NULL){ ?>
 							<li class="nav-item">
 								<a class="nav-link" id="tabUbicacion" data-toggle="pill" href="#contUbicacion" role="tab" aria-controls="contUbicacion" aria-selected="true"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;&nbsp;Ubicación</a>
 							</li>
+							<?php }; ?>
 							<li class="nav-item">
 								<a class="nav-link" id="tabGaleria" data-toggle="pill" href="#contGaleria" role="tab" aria-controls="contGaleria" aria-selected="true"><i class="far fa-images"></i>&nbsp;&nbsp;&nbsp;Galería</a>
 							</li>
@@ -149,9 +190,11 @@
 								</ul>
 
 							</div>
+							<?php if($consulta1['ubicacion'] != NULL){ ?>
 							<div class="tab-pane fade" id="contUbicacion" role="tabpanel" aria-labelledby="tabUbicacion">
 								
 							</div>
+							<?php }; ?>
 							<div class="tab-pane fade" id="contGaleria" role="tabpanel" aria-labelledby="tabGaleria">
 								<div class="row align-items-center no-gutters">
 									<?php
@@ -169,7 +212,7 @@
 						<div>
 							<h1>CONTACTO</h1>
 							<p>Ingresa tus datos y nos contactaremos a la brevedad.</p>
-							<form id="formContacto">
+							<form id="formContacto" action="assets/guardarInteresado.php" method="POST">
 								<div class="form-group">
 									<label for="nombre" class="col-form-label">Nombre</label>
 									<input type="text" class="form-control" id="nombre" name="nombre">
@@ -192,6 +235,7 @@
 									<label for="mensaje" class="col-form-label">Mensaje</label>
 									<textarea class="form-control" id="mensaje" rows="3" name="mensaje"></textarea>
 								</div>
+								<input type="hidden" class="form-control g-recaptcha" name="g-recaptcha-response" id="g-recaptcha-response">
 								<div class="form-group">
 									<div class="col text-center">
 										<button type="submit" class="btn btn-enviar">Enviar</button>
@@ -205,5 +249,13 @@
 		</section>
 
 		<?php include 'footer.php'; ?>
+
+		<script>
+          grecaptcha.ready(function() {
+            grecaptcha.execute('6LeW4eIUAAAAAP5oWqgMWsF54QGYYjldCQ0BefW1', {action: 'fichaVivienda'}).then(function(token) {
+              document.getElementById('g-recaptcha-response').value=token;
+            });
+          });
+        </script>
 	</body>
 </html>
